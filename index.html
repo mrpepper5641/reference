@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アメリカ民謡研究会</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Noto Serif JP', serif;
+      background: #0a0a0a;
+      color: #f5f0eb;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    header {
+      background: #f5f0eb;
+      color: #0a0a0a;
+      text-align: center;
+      padding: 64px 40px 40px;
+    }
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 400;
+      letter-spacing: 0.55em;
+      color: #0a0a0a;
+    }
+    header .tagline {
+      margin-top: 14px;
+      font-size: 0.85rem;
+      letter-spacing: 0.35em;
+      color: #888;
+    }
+    .hero {
+      background: #0a0a0a;
+      position: relative;
+      min-height: 640px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 72px;
+      overflow: hidden;
+    }
+    .hero svg.decorations {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .hero-catchphrase {
+      position: relative;
+      z-index: 1;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      letter-spacing: 0.15em;
+      color: #c8a0b4;
+      text-align: center;
+    }
+    .tags {
+      background: #0a0a0a;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      padding: 28px 40px 0;
+    }
+    .tag {
+      background: #e8c840;
+      color: #0a0a0a;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      padding: 5px 18px;
+      display: inline-block;
+    }
+    .description {
+      background: #0a0a0a;
+      padding: 48px 40px 56px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .description p {
+      color: #b8b0a8;
+      line-height: 2.4;
+      font-size: 0.95rem;
+      margin-bottom: 32px;
+    }
+    .description p:last-child { margin-bottom: 0; }
+    .songs-section {
+      background: #0a0a0a;
+      padding: 64px 40px;
+      border-top: 1px solid #1a1a1a;
+    }
+    .songs-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .songs-title {
+      color: #f5f0eb;
+      font-size: 1.4rem;
+      font-weight: 400;
+      letter-spacing: 0.45em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+    .songs-title::before,
+    .songs-title::after {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 1px;
+      background: #444;
+    }
+    .songs-sub {
+      color: #444;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      margin-top: 10px;
+    }
+    .song-list {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .song-item {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      padding: 22px 0;
+      border-bottom: 1px solid #1a1a1a;
+      color: #f5f0eb;
+      text-decoration: none;
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .song-item:hover { color: #c8a0b4; }
+    .song-number {
+      color: #444;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      flex-shrink: 0;
+      width: 24px;
+    }
+    .youtube-section {
+      background: #0a0a0a;
+      text-align: center;
+      padding: 56px 40px;
+      border-top: 1px solid #1a1a1a;
+    }
+    .youtube-link {
+      color: #f5f0eb;
+      text-decoration: none;
+      font-size: 0.95rem;
+      letter-spacing: 0.2em;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 4px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .youtube-link:hover { color: #c8a0b4; border-color: #c8a0b4; }
+    .youtube-channel {
+      color: #555;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      margin-top: 16px;
+    }
+    footer {
+      background: #0a0a0a;
+      border-top: 1px solid #1a1a1a;
+      text-align: center;
+      padding: 40px;
+    }
+    footer .copyright {
+      color: #444;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+    }
+    footer .disclaimer {
+      color: #333;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ア メ リ カ 民 謡 研 究 会</h1>
+    <p class="tagline">私達の名前は、アメリカ民謡研究会。</p>
+  </header>
+
+  <section class="hero">
+    <svg class="decorations" viewBox="0 0 1200 640" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <g fill="none" stroke="#3a3a4a" stroke-width="1">
+        <g transform="translate(120,80)">
+          <line x1="-8" y1="0" x2="8" y2="0"/><line x1="0" y1="-8" x2="0" y2="8"/>
+          <line x1="-5.6" y1="-5.6" x2="5.6" y2="5.6"/><line x1="5.6" y1="-5.6" x2="-5.6" y2="5.6"/>
+        </g>
+        <g transform="translate(960,100)">
+          <line x1="-8" y1="0" x2="8" y2="0"/><line x1="0" y1="-8" x2="0" y2="8"/>
+          <line x1="-5.6" y1="-5.6" x2="5.6" y2="5.6"/><line x1="5.6" y1="-5.6" x2="-5.6" y2="5.6"/>
+        </g>
+        <g transform="translate(540,320)">
+          <line x1="-6" y1="0" x2="6" y2="0"/><line x1="0" y1="-6" x2="0" y2="6"/>
+          <line x1="-4.2" y1="-4.2" x2="4.2" y2="4.2"/><line x1="4.2" y1="-4.2" x2="-4.2" y2="4.2"/>
+        </g>
+        <g transform="translate(340,500)">
+          <line x1="-7" y1="0" x2="7" y2="0"/><line x1="0" y1="-7" x2="0" y2="7"/>
+          <line x1="-5" y1="-5" x2="5" y2="5"/><line x1="5" y1="-5" x2="-5" y2="5"/>
+        </g>
+        <g transform="translate(1100,440)">
+          <line x1="-6" y1="0" x2="6" y2="0"/><line x1="0" y1="-6" x2="0" y2="6"/>
+          <line x1="-4.2" y1="-4.2" x2="4.2" y2="4.2"/><line x1="4.2" y1="-4.2" x2="-4.2" y2="4.2"/>
+        </g>
+        <circle cx="860" cy="80" r="14" stroke-dasharray="2 4"/>
+        <circle cx="180" cy="220" r="12" stroke-dasharray="2 4"/>
+        <circle cx="1050" cy="300" r="10" stroke-dasharray="2 3"/>
+        <circle cx="660" cy="460" r="14" stroke-dasharray="2 4"/>
+        <circle cx="420" cy="140" r="11" stroke-dasharray="2 3"/>
+        <g transform="translate(400,80)">
+          <line x1="-6" y1="0" x2="6" y2="0"/><line x1="0" y1="-6" x2="0" y2="6"/>
+        </g>
+        <g transform="translate(800,200)">
+          <line x1="-6" y1="0" x2="6" y2="0"/><line x1="0" y1="-6" x2="0" y2="6"/>
+        </g>
+        <g transform="translate(1150,520)">
+          <line x1="-6" y1="0" x2="6" y2="0"/><line x1="0" y1="-6" x2="0" y2="6"/>
+        </g>
+        <g transform="translate(240,540)">
+          <line x1="-6" y1="0" x2="6" y2="0"/><line x1="0" y1="-6" x2="0" y2="6"/>
+        </g>
+        <g transform="translate(720,560)">
+          <line x1="-6" y1="0" x2="6" y2="0"/><line x1="0" y1="-6" x2="0" y2="6"/>
+        </g>
+        <g transform="translate(280,340)">
+          <line x1="-10" y1="-5" x2="10" y2="-5"/>
+          <line x1="-10" y1="0" x2="10" y2="0"/>
+          <line x1="-10" y1="5" x2="10" y2="5"/>
+        </g>
+        <g transform="translate(900,400)">
+          <line x1="-10" y1="-5" x2="10" y2="-5"/>
+          <line x1="-10" y1="0" x2="10" y2="0"/>
+          <line x1="-10" y1="5" x2="10" y2="5"/>
+        </g>
+        <g transform="translate(580,560)">
+          <line x1="-10" y1="-5" x2="10" y2="-5"/>
+          <line x1="-10" y1="0" x2="10" y2="0"/>
+          <line x1="-10" y1="5" x2="10" y2="5"/>
+        </g>
+        <g transform="translate(1050,160)">
+          <line x1="-10" y1="10" x2="-2" y2="-10"/>
+          <line x1="-2" y1="10" x2="6" y2="-10"/>
+        </g>
+        <g transform="translate(680,260)">
+          <line x1="-10" y1="10" x2="-2" y2="-10"/>
+          <line x1="-2" y1="10" x2="6" y2="-10"/>
+        </g>
+        <g transform="translate(50,320)">
+          <line x1="-10" y1="10" x2="-2" y2="-10"/>
+          <line x1="-2" y1="10" x2="6" y2="-10"/>
+        </g>
+        <circle cx="600" cy="60" r="2" fill="#3a3a4a" stroke="none"/>
+        <circle cx="100" cy="400" r="2" fill="#3a3a4a" stroke="none"/>
+        <circle cx="760" cy="460" r="2" fill="#3a3a4a" stroke="none"/>
+        <circle cx="480" cy="580" r="2" fill="#3a3a4a" stroke="none"/>
+        <circle cx="1000" cy="520" r="2" fill="#3a3a4a" stroke="none"/>
+      </g>
+    </svg>
+    <p class="hero-catchphrase">聞いた後、あなたは何を感じるか。</p>
+  </section>
+
+  <div class="tags">
+    <span class="tag">VOCALOID</span>
+    <span class="tag">VOICEROID</span>
+  </div>
+
+  <div class="description">
+    <p>ニコニコ動画のボカロシーン黎明期から音楽に親しみ、2014年に活動を開始しました。VOICEROIDやVOCALOIDの声で詩を朗読させるポエトリーリーディングのスタイルを核に、ローファイヒップホップ・エレクトロニカを横断した楽曲を制作しています。</p>
+    <p>音楽の原点はクロノ・トリガーやFinal Fantasy VIIのゲームBGMにあります。そのファンタジー的なサウンドに、西尾維新やドストエフスキーから受け継いだ絶望の中の祈りを重ねます。明るい音と暗い言葉が同居する対比が、アメリカ民謡研究会の音楽の核にあります。</p>
+    <p>聴き終えたあと、その言葉はしばらく残ります。それが何という感情なのか、言葉では言い表せないとしても。</p>
+  </div>
+
+  <div class="songs-section">
+    <div class="songs-header">
+      <h2 class="songs-title">おすすめ</h2>
+      <p class="songs-sub">SELECTED RECORDINGS</p>
+    </div>
+    <div class="song-list">
+      <a class="song-item" href="https://www.youtube.com/watch?v=8EffzNXfh7U" target="_blank" rel="noopener">
+        <span class="song-number">01</span>夢を重ねて。
+      </a>
+      <a class="song-item" href="https://www.youtube.com/@AMK_Haniwa" target="_blank" rel="noopener">
+        <span class="song-number">02</span>どうか貴方は感情を汚さないで。
+      </a>
+      <a class="song-item" href="https://www.youtube.com/watch?v=0PuwiojeXJo" target="_blank" rel="noopener">
+        <span class="song-number">03</span>手紙。
+      </a>
+      <a class="song-item" href="https://www.youtube.com/@AMK_Haniwa" target="_blank" rel="noopener">
+        <span class="song-number">04</span>雨を集めている。
+      </a>
+      <a class="song-item" href="https://www.youtube.com/@AMK_Haniwa" target="_blank" rel="noopener">
+        <span class="song-number">05</span>全部私に頂戴よ。
+      </a>
+      <a class="song-item" href="https://www.youtube.com/watch?v=xYSptNIUjWc" target="_blank" rel="noopener">
+        <span class="song-number">06</span>讐復を能える。
+      </a>
+      <a class="song-item" href="https://www.youtube.com/watch?v=WYHtavecUJg" target="_blank" rel="noopener">
+        <span class="song-number">07</span>裂いて。
+      </a>
+      <a class="song-item" href="https://www.youtube.com/watch?v=Mc8bL7banL8" target="_blank" rel="noopener">
+        <span class="song-number">08</span>あいたいあの子に、あわせてあげる。
+      </a>
+    </div>
+  </div>
+
+  <div class="youtube-section">
+    <a class="youtube-link" href="https://www.youtube.com/@AMK_Haniwa" target="_blank" rel="noopener">
+      YouTube チャンネルを視聴する &nbsp;→
+    </a>
+    <p class="youtube-channel">@AMK_Haniwa</p>
+  </div>
+
+  <footer>
+    <p class="copyright">© 2026 アメリカ民謡研究会</p>
+    <p class="disclaimer">本ページはWebデザイン演習の課題として制作された非公式の紹介です</p>
+  </footer>
+
+</body>
+</html>
